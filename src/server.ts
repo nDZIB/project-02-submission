@@ -14,7 +14,11 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   app.use(bodyParser.json());
 
   app.get('/filteredimage', async (req, res) => {
-    const {image_url} = req.query;
+    const {image_url, Authorization: authHeader} = req.query;
+
+    if(authHeader !== 'serC8902_XAm') {
+      res.status(403).send('Authentication required');
+    }
 
     if(image_url && (image_url.startsWith('http://') || image_url.startsWith('https://'))) {
       const filteredImageUrl = await filterImageFromURL(image_url);
