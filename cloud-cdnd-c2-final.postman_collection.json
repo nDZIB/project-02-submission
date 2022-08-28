@@ -9,7 +9,12 @@
 			"name": "http://localhost:8082/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key":"Authorization",
+						"value":"serC8902_XAm"
+					}
+				],
 				"url": {
 					"raw": "http://{{HOST}}/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
 					"protocol": "http",
